@@ -11,13 +11,13 @@
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <h2>Sign-up</h2>
         First Name:<br>
-        <input type="text" name="firstname"><br>
+        <input type="text" name="firstname" required><br>
         Last Name:<br>
-        <input type="text" name="lastname"><br>
+        <input type="text" name="lastname" required><br>
         Username:<br>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" required><br>
         Password:<br>
-        <input type="Password" name="password"><br>
+        <input type="Password" name="password" required><br>
         <input type="submit" name="submit" value="Submit">
     </form>
     <!-- <form action="" method="post">
@@ -44,32 +44,29 @@
         // mysqli_query(mysqli $mysql, string $query, int $result_mode = MYSQLI_STORE_RESULT): mysqli_result|bool
         // echo 'inside1';
 
-        // // why does this make the script quit????
         $sql = "SELECT * FROM Student where Username like '$username'";
-        // $sql = "SELECT * FROM Student";
-        echo $sql . '<br>';
-        $result = mysqli_query($conn, $sql); // WHY DOES THIS LINE CAUSE AN ERROR???
+        $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
 
-        echo 'printing result' . '<br>';
-        foreach($resultarray as $entries) {
-            foreach($entries as $field) {
-                echo $field;
-            }
-        }
-
-
-        // if (empty($resultarray)) {
-        //     echo "That username is taken. Try again.";
+        // echo 'printing result' . '<br>';
+        // foreach($resultarray as $entries) {
+        //     foreach($entries as $field) {
+        //         echo $field;
+        //     }
         // }
 
-        // // else {
-        // //     $sql = "INSERT INTO Student (FirstName, LastName, Username, Password)
-        // //             VALUES ('$firstname', '$lastname', '$username', '$password')";
-        // //     mysqli_query($conn, $sql);
-        // //     echo"You are now registered!";
-        // // }
-        // // }
+
+        if (empty($resultarray)) {
+            echo "That username is taken. Try again.";
+        }
+
+        else {
+            $sql = "INSERT INTO Student (FirstName, LastName, Username, Password)
+                    VALUES ('$firstname', '$lastname', '$username', '$password')";
+            mysqli_query($conn, $sql);
+            echo"You are now registered!";
+        }
+        // }
 
         // $sql = "SELECT * FROM Student";
         // $result = mysqli_query($conn, $sql);
