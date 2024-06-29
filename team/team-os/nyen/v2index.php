@@ -37,7 +37,7 @@
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-        echo 'Hi, ' . $firstname . ', ' . $lastname . $username . '<br>';
+        echo 'Hi, ' . $firstname . ', ' . $lastname . ', ' . $username . '<br>';
 
 
         // $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -48,12 +48,12 @@
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
 
-        // echo 'printing result' . '<br>';
-        // foreach($resultarray as $entries) {
-        //     foreach($entries as $field) {
-        //         echo $field;
-        //     }
-        // }
+        echo 'printing result' . '<br>';
+        foreach($resultarray as $entries) {
+            foreach($entries as $field) {
+                echo $field;
+            }
+        }
 
 
         if (empty($resultarray)) {
