@@ -55,8 +55,7 @@
             }
         }
 
-
-        if (empty($resultarray)) {
+        if (sizeof($resultarray) > 0) {
             echo "That username is taken. Try again.";
         }
 
