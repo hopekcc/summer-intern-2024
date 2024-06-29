@@ -49,11 +49,11 @@
         $resultarray = mysqli_fetch_all($result);
 
         // echo 'printing result' . '<br>';
-        foreach($resultarray as $entries) {
-            foreach($entries as $field) {
-                echo $field;
-            }
-        }
+        // foreach($resultarray as $entries) {
+        //     foreach($entries as $field) {
+        //         echo $field;
+        //     }
+        // }
 
         if (sizeof($resultarray) > 0) {
             echo "That username is taken. Try again.";
