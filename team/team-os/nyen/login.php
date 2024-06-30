@@ -25,7 +25,11 @@
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
 
-        echo $resultarray;
+        foreach ($resultarray as $array) {
+            foreach ($array as $item) {
+                echo $item;
+            }
+        }
 
         // if () {
         //     echo "That username is taken. Try again.";
