@@ -25,10 +25,18 @@
         $sql = "SELECT FirstName, LastName FROM Student where Username like '$username'";
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
-        $fullname = '';
+        $firstname = '';
+        $lastname = '';
+        $count = 0;
         foreach ($resultarray as $array) {
             foreach ($array as $item) {
-                $fullname = $item;
+                if ($count == 0) {
+                    $firstname = $item;
+                }
+                if ($count == 1) {
+                    $lastname = $item;
+                }
+                count++;
             }
         }
 
@@ -40,7 +48,7 @@
         foreach ($resultarray as $array) {
             foreach ($array as $item) {
                 if ($item == $password) {
-                    echo 'Welcome, ' . $fullname;
+                    echo 'Welcome, ' . $firstname . ' ' . $lastname;
                 }
             }
         }
