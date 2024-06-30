@@ -40,6 +40,9 @@
                     if ($item == $password) {
                         echo 'Welcome, ' . $firstname . ' ' . $lastname;
                     }
+                    else {
+                        echo 'Incorrect username or password. Try again.';
+                    }
                 }
                 $count ++;
             }
