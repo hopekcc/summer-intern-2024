@@ -36,7 +36,7 @@
                 if ($count == 1) {
                     $lastname = $item;
                 }
-                count++;
+                count = count + 1;
             }
         }
 
