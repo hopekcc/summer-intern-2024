@@ -29,30 +29,13 @@
             echo 'This username is not registered. Try again.';
         }
         else {
-            $firstname = '';
-            $lastname = '';
-            $count = 0;
-            $firstname = $resultarray[0][0];
-
-            foreach ($resultarray as $array) {
-                foreach ($array as $item) {
-                    // if ($count == 0) {
-                    //     $firstname = $item;
-                    // }
-                    if ($count == 1) {
-                        $lastname = $item;
-                    }
-                    if ($count == 2) {
-                        if ($item == $password) {
-                            echo 'Welcome, ' . $firstname . ' ' . $lastname;
-                        }
-                        else {
-                            echo 'Incorrect password. Try again.';
-                        }
-                    }
-                    $count ++;
-                }
+            if ($resultarray[0][2] == $password) {
+                echo 'Welcome, ' . $resultarray[0][0] . ' ' . $resultarray[0][1];
             }
+            else {
+                echo 'Incorrect password. Try again.';
+            }
+
         }
 
 
