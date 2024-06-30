@@ -21,6 +21,18 @@
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
+        // getting  name
+        $sql = "SELECT FirstName, LastName FROM Student where Username like '$username'";
+        $result = mysqli_query($conn, $sql);
+        $resultarray = mysqli_fetch_all($result);
+        $fullname = '';
+        foreach ($resultarray as $array) {
+            foreach ($array as $item) {
+                $fullname = $item;
+            }
+        }
+
+        // verifying pass
         $sql = "SELECT Password FROM Student where Username like '$username'";
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
@@ -28,7 +40,7 @@
         foreach ($resultarray as $array) {
             foreach ($array as $item) {
                 if ($item == $password) {
-                    echo 'Welcome, ' . $username;
+                    echo 'Welcome, ' . $fullname;
                 }
             }
         }
