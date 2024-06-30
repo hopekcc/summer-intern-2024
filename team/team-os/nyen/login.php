@@ -41,7 +41,7 @@
                         echo 'Welcome, ' . $firstname . ' ' . $lastname;
                     }
                 }
-                count ++;
+                $count ++;
             }
         }
 
