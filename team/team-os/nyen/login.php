@@ -32,11 +32,13 @@
             $firstname = '';
             $lastname = '';
             $count = 0;
+            $firstname = $resultarray[0][0];
+
             foreach ($resultarray as $array) {
                 foreach ($array as $item) {
-                    if ($count == 0) {
-                        $firstname = $item;
-                    }
+                    // if ($count == 0) {
+                    //     $firstname = $item;
+                    // }
                     if ($count == 1) {
                         $lastname = $item;
                     }
