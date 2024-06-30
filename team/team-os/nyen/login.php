@@ -25,28 +25,34 @@
         $sql = "SELECT FirstName, LastName, Password FROM Student where Username like '$username'";
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
-        $firstname = '';
-        $lastname = '';
-        $count = 0;
-        foreach ($resultarray as $array) {
-            foreach ($array as $item) {
-                if ($count == 0) {
-                    $firstname = $item;
-                }
-                if ($count == 1) {
-                    $lastname = $item;
-                }
-                if ($count == 2) {
-                    if ($item == $password) {
-                        echo 'Welcome, ' . $firstname . ' ' . $lastname;
+        if (sizeof($resultarray) == 0) {
+            echo 'This username is not registered. Try again.';
+        }
+        else {
+            $firstname = '';
+            $lastname = '';
+            $count = 0;
+            foreach ($resultarray as $array) {
+                foreach ($array as $item) {
+                    if ($count == 0) {
+                        $firstname = $item;
                     }
-                    else {
-                        echo 'Incorrect username or password. Try again.';
+                    if ($count == 1) {
+                        $lastname = $item;
                     }
+                    if ($count == 2) {
+                        if ($item == $password) {
+                            echo 'Welcome, ' . $firstname . ' ' . $lastname;
+                        }
+                        else {
+                            echo 'Incorrect password. Try again.';
+                        }
+                    }
+                    $count ++;
                 }
-                $count ++;
             }
         }
+
 
         // verifying pass
         // $sql = "SELECT Password FROM Student where Username like '$username'";
