@@ -22,7 +22,7 @@
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
         // getting  name
-        $sql = "SELECT FirstName, LastName FROM Student where Username like '$username'";
+        $sql = "SELECT FirstName, LastName, Password FROM Student where Username like '$username'";
         $result = mysqli_query($conn, $sql);
         $resultarray = mysqli_fetch_all($result);
         $firstname = '';
@@ -36,22 +36,27 @@
                 if ($count == 1) {
                     $lastname = $item;
                 }
-                count = count + 1;
+                if ($count == 2) {
+                    if ($item == $password) {
+                        echo 'Welcome, ' . $firstname . ' ' . $lastname;
+                    }
+                }
+                count ++;
             }
         }
 
         // verifying pass
-        $sql = "SELECT Password FROM Student where Username like '$username'";
-        $result = mysqli_query($conn, $sql);
-        $resultarray = mysqli_fetch_all($result);
+        // $sql = "SELECT Password FROM Student where Username like '$username'";
+        // $result = mysqli_query($conn, $sql);
+        // $resultarray = mysqli_fetch_all($result);
 
-        foreach ($resultarray as $array) {
-            foreach ($array as $item) {
-                if ($item == $password) {
-                    echo 'Welcome, ' . $firstname . ' ' . $lastname;
-                }
-            }
-        }
+        // foreach ($resultarray as $array) {
+        //     foreach ($array as $item) {
+        //         if ($item == $password) {
+        //             echo 'Welcome, ' . $firstname . ' ' . $lastname;
+        //         }
+        //     }
+        // }
 
         // if () {
         //     echo "That username is taken. Try again.";
