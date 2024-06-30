@@ -27,7 +27,9 @@
 
         foreach ($resultarray as $array) {
             foreach ($array as $item) {
-                echo $item;
+                if ($item == $password) {
+                    echo 'Welcome, ' . $username;
+                }
             }
         }
 
