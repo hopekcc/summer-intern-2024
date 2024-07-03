@@ -15,7 +15,6 @@
         Password:<br>
         <input type="Password" name="password" required><br>
         <input type="submit" name="submit" value="Submit"><br>
-        <!-- <a href="https://www.w3schools.com/">Visit W3Schools.com!</a> -->
     </form>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,7 +30,7 @@
         }
         else {
             if ($resultarray[0][2] == $password) {
-                header("Location: https://www.geeksforgeeks.org");
+                header("Location: http://test1.hopekcc.org/classroom/ext_yensydney_gmail_com/summer-intern-2024/team/team-os/nyen/home.php");
                 exit;
             }
             else {
