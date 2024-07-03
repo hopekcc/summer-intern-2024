@@ -33,7 +33,6 @@
             if ($resultarray[0][2] == $password) {
                 header("Location: https://www.geeksforgeeks.org");
                 exit;
-                echo 'Welcome, ' . $resultarray[0][0] . ' ' . $resultarray[0][1];
             }
             else {
                 echo 'Incorrect password. Try again.';
