@@ -19,8 +19,6 @@
     </form>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        header("Location: https://www.geeksforgeeks.org");
-        exit;
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -33,6 +31,8 @@
         }
         else {
             if ($resultarray[0][2] == $password) {
+                header("Location: https://www.geeksforgeeks.org");
+                exit;
                 echo 'Welcome, ' . $resultarray[0][0] . ' ' . $resultarray[0][1];
             }
             else {
