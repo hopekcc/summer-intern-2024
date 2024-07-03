@@ -14,7 +14,8 @@
         <input type="text" name="username" required><br>
         Password:<br>
         <input type="Password" name="password" required><br>
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit"><br>
+        <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
     </form>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST") {
