@@ -15,10 +15,12 @@
         Password:<br>
         <input type="Password" name="password" required><br>
         <input type="submit" name="submit" value="Submit"><br>
-        <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+        <!-- <a href="https://www.w3schools.com/">Visit W3Schools.com!</a> -->
     </form>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST") {
+        header("Location: https://www.geeksforgeeks.org");
+        exit;
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
