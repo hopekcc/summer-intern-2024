@@ -1,0 +1,22 @@
+.header{
+    text-align: center;;
+    background-color: #282c34;
+    padding: 1vh 1vh 4vh 1vh;
+}
+
+.navbar{
+    list-style: none;
+    background-color: rgb(173, 181, 189);
+    width: 75vw;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.navbarItem{
+    display: inline;
+    margin: 0 1vw;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
