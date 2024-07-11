@@ -17,8 +17,6 @@ cp ${mypath}/gitignore ${team}/project/presentation/.gitignore
 
 [ -z ${name} ] && echo "no student assigned. Skip student folders" && exit
 
-exit
-
 echo "creating folders for ${name} in ${team}"
 for i in $(seq 4); do
     echo "week${i}"
