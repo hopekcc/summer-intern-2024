@@ -75,17 +75,4 @@ function MyForm() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<MyForm />);
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>Intriguing</h1>
-//       <h2>intriguing...</h2>
-//       <h3>intriguing</h3>
-//       <p>hello</p>
-      
-//     </div>
-//   );
-// }
-
 export default MyForm;
