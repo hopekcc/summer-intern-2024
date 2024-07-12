@@ -60,7 +60,7 @@ function MyForm() {
         <label>Password:
         <br></br>
         <input 
-          type="text" 
+          type="password" 
           name="password" required
           value={password} 
           onChange={(e) => setpassword(e.target.value)}
