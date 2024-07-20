@@ -22,7 +22,7 @@ function MyForm() {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Sign-up form</h1>
-      <h2>Welcome to HopeKCC!</h2>
+      <h2>Welcome to Sigma!</h2>
 
       <label>First name:
       <br></br>
