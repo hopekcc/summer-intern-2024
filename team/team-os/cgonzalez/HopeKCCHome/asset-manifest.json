@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/classroom/team-os/HopeKCCHome/static/css/main.333a97f3.css",
+    "main.js": "/classroom/team-os/HopeKCCHome/static/js/main.626aff0e.js",
+    "static/media/Robot.png": "/classroom/team-os/HopeKCCHome/static/media/Robot.8d5dee2c0536f37931c0.png",
+    "index.html": "/classroom/team-os/HopeKCCHome/index.html",
+    "main.333a97f3.css.map": "/classroom/team-os/HopeKCCHome/static/css/main.333a97f3.css.map",
+    "main.626aff0e.js.map": "/classroom/team-os/HopeKCCHome/static/js/main.626aff0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.333a97f3.css",
+    "static/js/main.626aff0e.js"
+  ]
+}
